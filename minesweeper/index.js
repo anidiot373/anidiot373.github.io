@@ -67,7 +67,7 @@ class Minesweeper {
 		this.mouseDown = false
 
 		this.marksEnabled = true
-		this.soundsEnabled = true
+		this.soundsEnabled = false
 
 		this.shouldDrawBorders = true
 		this.shouldDrawHud = true
