@@ -18,6 +18,8 @@ const STATE_PLAYING = 0
 const STATE_WON = 1
 const STATE_LOST = 2
 
+let isFlagging = false
+
 class Minesweeper {
 	#width
 	#height
@@ -495,7 +497,7 @@ window.onload = () => {
 				game.smileId = 2
 			}
 		}
-		else if (event.button === 1) {
+		else if (!isFlagging) {
 			const boardX = event.offsetX - 12
 			const boardY = event.offsetY - 55
 			
@@ -503,7 +505,7 @@ window.onload = () => {
 				game.chordTile(Math.floor(boardX / 16), Math.floor(boardY / 16))
 			}
 		}
-		else if (event.button === 2 && !game.pressingSmile) {
+		else if (isFlagging && !game.pressingSmile) {
 			const boardX = event.offsetX - 12
 			const boardY = event.offsetY - 55
 			
